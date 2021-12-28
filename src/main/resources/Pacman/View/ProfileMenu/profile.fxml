@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.text.Text?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Pacman.View.ProfileMenu"
+          prefHeight="600.0" prefWidth="600.0"
+          alignment="center" hgap="10" vgap="10"
+          styleClass="root"
+>
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+    <stylesheets>
+        <URL value="@profile.css" />
+    </stylesheets>
+
+    <Label text="old password:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <PasswordField fx:id="oldPass"
+               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="new Password:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <PasswordField fx:id="newPass"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <HBox spacing="10" alignment="bottom_right"
+          GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button text="Change Password"
+                onAction="#changePassword"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="BOTTOM_CENTER"
+          GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <Label text="Delete Account"/>
+        <Button text="Delete Account"
+                onAction="#deleteAccount"/>
+    </HBox>
+    <HBox spacing="10" alignment="BOTTOM_LEFT"
+          GridPane.columnIndex="0" GridPane.rowIndex="5">
+        <Button text="Back"
+                onAction="#back"/>
+    </HBox>
+    <Text fx:id="actionTarget"
+          GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+</GridPane>
